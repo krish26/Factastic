@@ -1,8 +1,10 @@
 package com.example.factastic;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView factText;
     private Button newFactButton;
+
+    private ImageButton btnShare;
     private FunFactApi apiService;
 
     @Override
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         factText=findViewById(R.id.factText);
         newFactButton=findViewById(R.id.newFactButton);
+        btnShare = findViewById(R.id.btnShare);
 
         setupRetrofit();
 
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 fetchRandomFact();
             }
         });
+        btnShare.setOnClickListener(v -> shareFact());
 
     }
 
@@ -47,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder().baseUrl("https://uselessfacts.jsph.pl/").addConverterFactory(GsonConverterFactory.create()).build();
 
         apiService=retrofit.create(FunFactApi.class);
+    }
+
+    private void shareFact() {
+        String factToShare = factText.getText().toString();
+        if (!factToShare.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, factToShare);
+            startActivity(Intent.createChooser(intent, "Share this fun fact"));
+        }
     }
 
     private void fetchRandomFact(){
