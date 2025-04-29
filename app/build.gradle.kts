@@ -43,4 +43,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.gson)
     implementation(libs.converter.gson)
+    implementation (libs.github.glide)
+    annotationProcessor(libs.compiler)
+    implementation (libs.core.splashscreen)
+
 }

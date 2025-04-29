@@ -2,25 +2,35 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:background="#4456"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#66000000"
+    android:type="linear"
+    android:angle="45"
+    android:startColor="#FFECD2"
+    android:endColor="#FCB69F"
+    android:gradientRadius="90"
+    android:centerX="0.5"
+    android:centerY="0.5"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/factText"
-        android:layout_width="357dp"
-        android:layout_height="188dp"
+        android:layout_width="397dp"
+        android:layout_height="217dp"
+        android:background="#99141414"
         android:gravity="center"
         android:text="Tap the button for a new fun fact"
-        android:textColor="#333"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/newFactButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <Button
         android:id="@+id/newFactButton"
@@ -28,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="156dp"
         android:text="New Fact"
-        android:backgroundTint="#900C3F"
+        android:backgroundTint="@color/black"
         android:shadowRadius="@integer/material_motion_duration_short_1"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +55,9 @@
         android:src="@drawable/share"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@android:color/black" />
+        app:tint="@android:color/holo_blue_bright" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
