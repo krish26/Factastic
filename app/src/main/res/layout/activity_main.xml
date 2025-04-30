@@ -18,13 +18,13 @@
 
     <TextView
         android:id="@+id/factText"
-        android:layout_width="397dp"
-        android:layout_height="217dp"
+        android:layout_width="373dp"
+        android:layout_height="193dp"
         android:background="#99141414"
         android:gravity="center"
         android:text="Tap the button for a new fun fact"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/newFactButton"
         app:layout_constraintEnd_toEndOf="parent"
